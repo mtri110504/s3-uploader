@@ -81,3 +81,67 @@ Provide the following information:
 ```text
 tri-upload-demo
 ```
+
+Recommended bucket configuration:
+
+- Public access: ❌ Disabled
+- Block all public access: ✅ Enabled
+- File access via Presigned URLs (more secure than public access)
+
+---
+
+## 🟦 PART 3 — Python Upload Script
+
+### Create the file upload3.py:
+```python
+import boto3
+import os
+from datetime import datetime
+
+s3 = boto3.client("s3")
+BUCKET_NAME = "tri-upload-demo"
+
+def upload_file(file_path):
+    if not os.path.exists(file_path):
+        print(f"File not found: {file_path}")
+        return
+
+    today = datetime.now().strftime("%Y/%m/%d")
+    file_name = os.path.basename(file_path)
+    s3_key = f"{today}/{file_name}"
+
+    s3.upload_file(file_path, BUCKET_NAME, s3_key)
+
+    url = s3.generate_presigned_url(
+        "get_object",
+        Params={"Bucket": BUCKET_NAME, "Key": s3_key},
+        ExpiresIn=3600
+    )
+
+    print("✅ Upload successful!")
+    print("📂 S3 Object Key:", s3_key)
+    print("🔗 Download link (expires in 1 hour):")
+    print(url)
+
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) < 2:
+        print("Usage: python upload3.py <path-to-file>")
+    else:
+        upload_file(sys.argv[1])
+```
+
+---
+
+## 🟦 PART 4 — Run the Upload Script
+
+### Upload a file example
+```bash
+python upload3.py ~/Downloads/Gemini.png
+```
+
+### Output includes:
+
+- S3 object key
+- Temporary download link (Presigned URL)
+
