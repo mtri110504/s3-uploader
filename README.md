@@ -147,16 +147,6 @@ python upload3.py ~/Downloads/Gemini.png
 
 ---
 
-## 📂 Project Structure
-```
-s3-uploader/
-├── upload3.py
-├── venv/
-└── README.md
-```
-
----
-
 ## 🎯 What You Will Learn
 - How Amazon S3 works
 - Uploading files to S3 using boto3
