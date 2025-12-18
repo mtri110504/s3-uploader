@@ -41,7 +41,6 @@ pip install boto3
 aws configure
 ```
 ### You will be asked to provide:
-
 - AWS Access Key ID
 - AWS Secret Access Key
 - Default region (e.g. ap-southeast-1)
@@ -50,3 +49,26 @@ aws configure
 Attach an IAM Role with permissions:
 - s3:PutObject
 - s3:GetObject
+
+---
+
+## 🚀 Usage
+
+### Example: Upload a file to S3
+```python
+import boto3
+
+s3 = boto3.client("s3")
+
+bucket_name = "your-bucket-name"
+local_file = "test.txt"
+s3_key = "uploads/test.txt"
+
+s3.upload_file(local_file, bucket_name, s3_key)
+
+print("File uploaded successfully!")
+```
+Run the script:
+```bash
+python upload.py
+```
