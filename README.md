@@ -34,3 +34,6 @@ pip install boto3
 ---
 
 ## 🔐 AWS Configuration
+Option 1: Using AWS Access Key
+
+Configure credentials:
