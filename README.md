@@ -25,5 +25,12 @@ Python Script (Local / EC2) → Amazon S3
 ```bash
 git clone https://github.com/yourusername/python-s3-file-upload.git
 cd python-s3-file-upload
-
+```
 ---
+### 2. Install dependencies
+```bash
+pip install boto3
+```
+---
+
+## 🔐 AWS Configuration
