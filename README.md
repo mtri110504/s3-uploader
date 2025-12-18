@@ -37,3 +37,18 @@ pip install boto3
 Option 1: Using AWS Access Key
 
 Configure credentials:
+```bash
+aws configure
+```
+You will be asked to provide:
+
+- AWS Access Key ID
+
+- AWS Secret Access Key
+
+- Default region (e.g. ap-southeast-1)
+
+Option 2: Using IAM Role (Recommended for EC2)
+Attach an IAM Role with permissions:
+- s3:PutObject
+- s3:GetObject
