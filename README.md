@@ -63,3 +63,21 @@ brew install awscli
 ---
 
 ### 5. Configure AWS CLI
+```bash
+aws configure
+```
+
+Provide the following information:
+- AWS Access Key ID
+- AWS Secret Access Key
+- Default region (e.g. ap-southeast-1)
+- Output format: json
+
+---
+
+## 🟦 PART 2 — Create Amazon S3 Bucket
+
+### Bucket name:
+```text
+tri-upload-demo
+```
