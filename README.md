@@ -145,3 +145,36 @@ python upload3.py ~/Downloads/Gemini.png
 - S3 object key
 - Temporary download link (Presigned URL)
 
+---
+
+## 📂 Project Structure
+```
+s3-uploader/
+├── upload3.py
+├── venv/
+└── README.md
+```
+
+---
+
+## 🎯 What You Will Learn
+- How Amazon S3 works
+- Uploading files to S3 using boto3
+- Managing AWS credentials securely
+- Generating Presigned URLs for private objects
+- Organizing cloud storage by date
+
+---
+
+## 🚀 Possible Enhancements
+- Upload multiple files at once
+- Validate file size and file type
+- Upload via API Gateway + AWS Lambda
+- Build a web interface for file uploads
+- Enable S3 encryption (SSE-S3 or SSE-KMS)
+
+---
+
+## 👤 Author
+Tri Bui
+Cloud / Backend Learner
